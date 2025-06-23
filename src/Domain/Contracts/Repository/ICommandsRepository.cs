@@ -1,3 +1,3 @@
 namespace Domain.Contracts.Repository;
 
-public interface ICommandsRepository {}
+public interface ICommandsRepository { }

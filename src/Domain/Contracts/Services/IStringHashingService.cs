@@ -2,7 +2,7 @@ namespace Domain.Contracts.Services;
 
 public interface IStringHashingService
 {
-  public string GetPasswordHash(string password);
+    public string GetPasswordHash(string password);
 
-  public bool CheckPasswordHashMatches(string password, string hashedPassword);
+    public bool CheckPasswordHashMatches(string password, string hashedPassword);
 }
