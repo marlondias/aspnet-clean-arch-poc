@@ -7,5 +7,5 @@ public record InputBoundary(
     string FirstName,
     string? LastName,
     string EmailAddress,
-    string Password
+    string? Password
 ) : IUseCaseInputBoundary;
