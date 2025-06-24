@@ -1,6 +1,8 @@
 namespace Application.Contracts;
 
-public interface IUseCaseInteractor
+public interface IUseCaseInteractor<I, O>
+    where I : IUseCaseInputBoundary
+    where O : IUseCaseOutputBoundary
 {
-    public IUseCaseOutputBoundary Handle(IUseCaseInputBoundary input);
+    public Task<O> Handle(I input);
 }
