@@ -22,6 +22,16 @@ public class User : Entity
         Email = email;
     }
 
+    public User(PersonName name, EmailAddress email, string? hashedPassword, DateTime? emailVerifiedAt, DateTime? createdAt, DateTime? updatedAt)
+    {
+        Name = name;
+        Email = email;
+        HashedPassword = hashedPassword;
+        EmailVerifiedAt = emailVerifiedAt;
+        CreatedAt = createdAt;
+        UpdatedAt = updatedAt;
+    }
+
     public void SetHashedPasswordFromPlainText(IStringHashingService stringHashingService, string password)
     {
         ValidatePasswordContent(password);
@@ -58,12 +68,6 @@ public class User : Entity
             throw new Exception("Não há como comparar a senha com uma hash indefinida.");
 
         return stringHashingService.CheckPasswordHashMatches(password, HashedPassword);
-    }
-
-    public bool IsEmailAddressAlreadyInUse(IUserQueriesRepository repository, EmailAddress emailAddress)
-    {
-        var user = repository.findByEmail(emailAddress);
-        return user != null;
     }
 
 }
