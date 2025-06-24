@@ -1,4 +1,4 @@
-namespace Application.Contracts;
+namespace CleanArchPOC.Application.Contracts;
 
 public interface IUseCaseInteractor<I, O>
     where I : IUseCaseInputBoundary

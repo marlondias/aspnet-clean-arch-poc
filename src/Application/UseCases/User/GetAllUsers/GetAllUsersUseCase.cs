@@ -1,7 +1,7 @@
-using Application.Contracts;
-using Domain.Contracts.Repository;
+using CleanArchPOC.Application.Contracts;
+using CleanArchPOC.Domain.Contracts.Repository;
 
-namespace Application.UseCases.User.GetAllUsers;
+namespace CleanArchPOC.Application.UseCases.User.GetAllUsers;
 
 public sealed class GetAllUsersUseCase : IUseCaseInteractor<InputBoundary, OutputBoundary>
 {

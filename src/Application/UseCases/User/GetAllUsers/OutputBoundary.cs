@@ -1,5 +1,5 @@
-using Application.Contracts;
+using CleanArchPOC.Application.Contracts;
 
-namespace Application.UseCases.User.GetAllUsers;
+namespace CleanArchPOC.Application.UseCases.User.GetAllUsers;
 
 public record OutputBoundary(Domain.Entities.User[] Users) : IUseCaseOutputBoundary;

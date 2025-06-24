@@ -1,3 +1,3 @@
-namespace Application.Contracts;
+namespace CleanArchPOC.Application.Contracts;
 
 public interface IUseCaseOutputBoundary { }

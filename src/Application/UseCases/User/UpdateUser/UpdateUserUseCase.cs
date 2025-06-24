@@ -1,10 +1,9 @@
-using Application.Contracts;
-using Application.Exceptions;
-using Domain.Contracts.Repository;
-using Domain.Contracts.Services;
-using Domain.ValueObjects;
+using CleanArchPOC.Application.Contracts;
+using CleanArchPOC.Domain.Contracts.Repository;
+using CleanArchPOC.Domain.Contracts.Services;
+using CleanArchPOC.Domain.ValueObjects;
 
-namespace Application.UseCases.User.UpdateUser;
+namespace CleanArchPOC.Application.UseCases.User.UpdateUser;
 
 public sealed class UpdateUserUseCase : IUseCaseInteractor<InputBoundary, OutputBoundary>
 {

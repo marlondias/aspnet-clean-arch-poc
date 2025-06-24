@@ -1,10 +1,9 @@
-using Application.Contracts;
-using Application.Exceptions;
-using Domain.Contracts.Repository;
-using Domain.Contracts.Services;
-using Domain.ValueObjects;
+using CleanArchPOC.Application.Contracts;
+using CleanArchPOC.Domain.Contracts.Repository;
+using CleanArchPOC.Domain.Contracts.Services;
+using CleanArchPOC.Domain.ValueObjects;
 
-namespace Application.UseCases.User.CreateUser;
+namespace CleanArchPOC.Application.UseCases.User.CreateUser;
 
 public sealed class CreateUserUseCase : IUseCaseInteractor<InputBoundary, OutputBoundary>
 {

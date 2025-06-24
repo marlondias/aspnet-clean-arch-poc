@@ -1,5 +1,5 @@
-using Application.Contracts;
+using CleanArchPOC.Application.Contracts;
 
-namespace Application.UseCases.User.GetUser;
+namespace CleanArchPOC.Application.UseCases.User.GetUser;
 
 public record InputBoundary(int UserId) : IUseCaseInputBoundary;

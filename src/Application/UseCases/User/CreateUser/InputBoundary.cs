@@ -1,6 +1,6 @@
-using Application.Contracts;
+using CleanArchPOC.Application.Contracts;
 
-namespace Application.UseCases.User.CreateUser;
+namespace CleanArchPOC.Application.UseCases.User.CreateUser;
 
 public record InputBoundary(
     string FirstName,

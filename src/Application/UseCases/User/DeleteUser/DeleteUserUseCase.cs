@@ -1,7 +1,7 @@
-using Application.Contracts;
-using Domain.Contracts.Repository;
+using CleanArchPOC.Application.Contracts;
+using CleanArchPOC.Domain.Contracts.Repository;
 
-namespace Application.UseCases.User.DeleteUser;
+namespace CleanArchPOC.Application.UseCases.User.DeleteUser;
 
 public sealed class DeleteUserUseCase : IUseCaseInteractor<InputBoundary, OutputBoundary>
 {

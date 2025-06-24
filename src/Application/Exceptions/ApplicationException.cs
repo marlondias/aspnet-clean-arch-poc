@@ -1,4 +1,4 @@
-namespace Application.Exceptions;
+namespace CleanArchPOC.Application.Exceptions;
 
 public class ApplicationException : Exception
 {
