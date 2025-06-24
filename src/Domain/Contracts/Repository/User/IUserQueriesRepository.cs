@@ -1,7 +1,7 @@
-using Domain.Entities;
-using Domain.ValueObjects;
+using CleanArchPOC.Domain.Entities;
+using CleanArchPOC.Domain.ValueObjects;
 
-namespace Domain.Contracts.Repository;
+namespace CleanArchPOC.Domain.Contracts.Repository;
 
 public interface IUserQueriesRepository : IQueriesRepository<User>
 {

@@ -1,4 +1,4 @@
-namespace Domain.Exceptions;
+namespace CleanArchPOC.Domain.Exceptions;
 
 public class DomainException : Exception
 {

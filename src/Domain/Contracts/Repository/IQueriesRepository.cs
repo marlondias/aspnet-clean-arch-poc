@@ -1,4 +1,4 @@
-namespace Domain.Contracts.Repository;
+namespace CleanArchPOC.Domain.Contracts.Repository;
 
 public interface IQueriesRepository<T>
 {

@@ -1,5 +1,5 @@
-using Domain.Entities;
+using CleanArchPOC.Domain.Entities;
 
-namespace Domain.Contracts.Repository;
+namespace CleanArchPOC.Domain.Contracts.Repository;
 
 public interface IUserCommandsRepository : ICommandsRepository<User> { }

@@ -1,6 +1,6 @@
-using Domain.Contracts;
+using CleanArchPOC.Domain.Contracts;
 
-namespace Domain.ValueObjects;
+namespace CleanArchPOC.Domain.ValueObjects;
 
 public class PersonName : IValueObject
 {

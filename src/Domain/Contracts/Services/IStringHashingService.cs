@@ -1,4 +1,4 @@
-namespace Domain.Contracts.Services;
+namespace CleanArchPOC.Domain.Contracts.Services;
 
 public interface IStringHashingService
 {

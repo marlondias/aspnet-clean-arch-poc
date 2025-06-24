@@ -1,11 +1,10 @@
 using System.Text.RegularExpressions;
-using Domain.Contracts;
-using Domain.Contracts.Repository;
-using Domain.Contracts.Services;
-using Domain.Exceptions;
-using Domain.ValueObjects;
+using CleanArchPOC.Domain.Contracts;
+using CleanArchPOC.Domain.Contracts.Services;
+using CleanArchPOC.Domain.Exceptions;
+using CleanArchPOC.Domain.ValueObjects;
 
-namespace Domain.Entities;
+namespace CleanArchPOC.Domain.Entities;
 
 public class User : Entity
 {

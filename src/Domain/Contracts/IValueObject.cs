@@ -1,4 +1,4 @@
-namespace Domain.Contracts;
+namespace CleanArchPOC.Domain.Contracts;
 
 public interface IValueObject
 {
