@@ -36,6 +36,6 @@ public sealed class CreateUserUseCase : IUseCaseInteractor<InputBoundary, Output
         await _userCommandsRepository.Insert(user);
         var createdUser = await _userQueriesRepository.FindByEmail(email);
 
-        return new OutputBoundary(createdUser.Id);
+        return new OutputBoundary(createdUser.Id, createdUser.CreatedAt);
     }
 }
