@@ -1,20 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
-using CleanArchPOC.Application.UseCases.User.DeleteUser;
 using CleanArchPOC.Domain.Contracts.Repository;
 using CleanArchPOC.Domain.Contracts.Services;
-
+using CleanArchPOC.Domain.Entities;
 using CleanArchPOC.Application.UseCases.User.GetAllUsers;
 using CleanArchPOC.Application.UseCases.User.GetUser;
 using CleanArchPOC.Application.UseCases.User.CreateUser;
 using CleanArchPOC.Application.UseCases.User.UpdateUser;
 using CleanArchPOC.Application.UseCases.User.DeleteUser;
-
 using GetAllUsersInputBoundary = CleanArchPOC.Application.UseCases.User.GetAllUsers.InputBoundary;
 using GetUserInputBoundary = CleanArchPOC.Application.UseCases.User.GetUser.InputBoundary;
 using CreateUserInputBoundary = CleanArchPOC.Application.UseCases.User.CreateUser.InputBoundary;
 using UpdateUserInputBoundary = CleanArchPOC.Application.UseCases.User.UpdateUser.InputBoundary;
 using DeleteUserInputBoundary = CleanArchPOC.Application.UseCases.User.DeleteUser.InputBoundary;
-using CleanArchPOC.Domain.Entities;
 
 namespace CleanArchPOC.Adapters.Http.Controllers;
 
