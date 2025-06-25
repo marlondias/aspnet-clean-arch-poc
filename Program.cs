@@ -1,9 +1,14 @@
+using CleanArchPOC.Adapters.Services;
+using CleanArchPOC.Domain.Contracts.Repository;
+using CleanArchPOC.Domain.Contracts.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddSingleton<IUserCommandsRepository, UserRepository>();
+builder.Services.AddSingleton<IUserQueriesRepository, UserRepository>();
+builder.Services.AddSingleton<IStringHashingService, StringHashingService>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
