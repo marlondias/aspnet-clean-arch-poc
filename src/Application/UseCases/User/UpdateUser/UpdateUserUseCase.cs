@@ -28,13 +28,16 @@ public sealed class UpdateUserUseCase : IUseCaseInteractor<InputBoundary, Output
         if (user is null)
             throw new Exception($"The is no user with ID {input.UserId}.");
 
-        var name = new PersonName(input.FirstName, input.LastName);
-        if (name != user.Name)
-            user.Name = name;
-
-        var email = new EmailAddress(input.EmailAddress);
-        if (email != user.Email)
+        if (input.FirstName is not null)
         {
+            var name = new PersonName(input.FirstName, input.LastName ?? user.Name.LastName);
+            if (user.Name != name)
+                user.Name = name;
+        }
+
+        if (input.EmailAddress is not null && input.EmailAddress != user.Email.FullAddress)
+        {
+            var email = new EmailAddress(input.EmailAddress);
             if (await _userQueriesRepository.IsEmailAddressAlreadyInUse(email))
                 throw new Exception("This email address is already in use.");
 
@@ -42,10 +45,13 @@ public sealed class UpdateUserUseCase : IUseCaseInteractor<InputBoundary, Output
         }
 
         if (input.Password is not null)
+        {
             user.SetHashedPasswordFromPlainText(_stringHashingService, input.Password);
+        }
 
         await _userCommandsRepository.Update(user);
 
         return new OutputBoundary();
     }
+
 }
