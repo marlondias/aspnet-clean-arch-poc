@@ -8,6 +8,7 @@ namespace CleanArchPOC.Database.Models;
 [Index(nameof(Email), IsUnique = true)]
 public class User
 {
+    [Column("id")]
     public int Id { get; set; }
 
     [Column("first_name")]
@@ -34,5 +35,5 @@ public class User
 
     [Column("updated_at")]
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
 }
