@@ -8,28 +8,12 @@ namespace CleanArchPOC.Domain.Entities;
 
 public class User : Entity
 {
-    public PersonName Name { get; set; }
-    public EmailAddress Email { get; set; }
+    public required PersonName Name { get; set; }
+    public required EmailAddress Email { get; set; }
     public string? HashedPassword { get; set; }
     public DateTime? EmailVerifiedAt { get; set; }
     public DateTime? CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
-
-    public User(PersonName name, EmailAddress email)
-    {
-        Name = name;
-        Email = email;
-    }
-
-    public User(PersonName name, EmailAddress email, string? hashedPassword, DateTime? emailVerifiedAt, DateTime? createdAt, DateTime? updatedAt)
-    {
-        Name = name;
-        Email = email;
-        HashedPassword = hashedPassword;
-        EmailVerifiedAt = emailVerifiedAt;
-        CreatedAt = createdAt;
-        UpdatedAt = updatedAt;
-    }
 
     public void SetHashedPasswordFromPlainText(IStringHashingService stringHashingService, string password)
     {
