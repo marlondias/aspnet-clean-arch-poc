@@ -14,13 +14,13 @@ public class EmailAddress : IValueObject
         emailAddress = emailAddress.Trim();
         var regexValidEmail = new Regex(@"^([^.][!#$%&'*+\-/=?^_`{|}~.\w\d]+[^.])@([\-.\w]+)$");
 
-        if (regexValidEmail.IsMatch(emailAddress))
+        if (!regexValidEmail.IsMatch(emailAddress))
             throw new Exception("E-mail address is not valid.");
 
-        var matches = regexValidEmail.Matches(emailAddress);
+        var match = regexValidEmail.Match(emailAddress);
 
-        LocalPart = matches[1].Value;
-        DomainPart = matches[2].Value;
+        LocalPart = match.Groups[1].Value;
+        DomainPart = match.Groups[2].Value;
         FullAddress = emailAddress;
     }
 
