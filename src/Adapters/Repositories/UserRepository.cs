@@ -19,6 +19,7 @@ public sealed class UserRepository : IUserCommandsRepository, IUserQueriesReposi
     public async Task Insert(User entity)
     {
         var dbUser = MapUserToDatabaseModel(entity);
+        dbUser.CreatedAt = DateTime.UtcNow;
         _context.Users.Add(dbUser);
         await _context.SaveChangesAsync();
     }
@@ -34,6 +35,7 @@ public sealed class UserRepository : IUserCommandsRepository, IUserQueriesReposi
         dbUser.LastName = entity.Name.LastName;
         dbUser.Email = entity.Email.FullAddress;
         dbUser.EmailVerifiedAt = entity.EmailVerifiedAt;
+        dbUser.UpdatedAt = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
     }
@@ -91,7 +93,7 @@ public sealed class UserRepository : IUserCommandsRepository, IUserQueriesReposi
 
         if (user.Id != null)
             dbUser.Id = (int)user.Id;
-
+            
         return dbUser;
     }
 
