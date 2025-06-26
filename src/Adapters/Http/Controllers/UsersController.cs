@@ -46,9 +46,9 @@ public class UsersController : ControllerBase
             var usersDtos = output.Users.Select(user => ConvertUserEntityToDTO(user)).ToArray();
             return Ok(usersDtos);
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            return BadRequest();
+            return BadRequest(e.Message);
         }
     }
 
@@ -63,9 +63,9 @@ public class UsersController : ControllerBase
             var output = await useCase.Handle(input);
             return Ok(ConvertUserEntityToDTO(output.User));
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            return BadRequest();
+            return BadRequest(e.Message);
         }
     }
 
@@ -94,9 +94,9 @@ public class UsersController : ControllerBase
                 new { id = output.UserId, createdAt = output.CreatedAt }
             );
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            return BadRequest();
+            return BadRequest(e.Message);
         }
 
     }
@@ -122,9 +122,9 @@ public class UsersController : ControllerBase
             var output = await useCase.Handle(input);
             return NoContent();
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            return BadRequest();
+            return BadRequest(e.Message);
         }
     }
 
@@ -139,9 +139,9 @@ public class UsersController : ControllerBase
             var output = await useCase.Handle(input);
             return NoContent();
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            return BadRequest();
+            return BadRequest(e.Message);
         }
     }
 
