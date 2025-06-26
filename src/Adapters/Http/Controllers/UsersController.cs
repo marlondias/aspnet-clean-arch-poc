@@ -147,16 +147,15 @@ public class UsersController : ControllerBase
 
     private GetUserResponseDto ConvertUserEntityToDTO(User user)
     {
-        var dto = new GetUserResponseDto();
-
-        dto.id = user.Id;
-        dto.firstName = user.Name.FirstName;
-        dto.lastName = user.Name.LastName;
-        dto.emailAddress = user.Email.FullAddress;
-        dto.createdAt = user.CreatedAt;
-        dto.updatedAt = user.UpdatedAt;
-        dto.emailVerifiedAt = user.EmailVerifiedAt;
-
-        return dto;
+        return new GetUserResponseDto
+        {
+            id = user.Id ?? 0,
+            firstName = user.Name.FirstName,
+            lastName = user.Name.LastName,
+            emailAddress = user.Email.FullAddress,
+            createdAt = user.CreatedAt,
+            updatedAt = user.UpdatedAt,
+            emailVerifiedAt = user.EmailVerifiedAt
+        };
     }
 }
